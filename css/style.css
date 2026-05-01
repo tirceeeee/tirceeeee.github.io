@@ -1064,7 +1064,7 @@ ul {
 
 @media (max-width: 768px) {
   .page-loader__frame {
-    width: 120px;
+    width: 160px;
     right: 12px;
     bottom: 12px;
   }
