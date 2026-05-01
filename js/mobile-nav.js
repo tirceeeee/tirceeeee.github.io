@@ -22,11 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const closeBtn = overlay.querySelector('.mobile-menu__close');
 
+  function getHeroVideos() {
+    return document.querySelectorAll('.tc-hero video, .hero video, .hero-video video');
+  }
+
   function openMenu() {
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden', 'false');
     btn.setAttribute('aria-expanded', 'true');
     document.documentElement.style.overflow = 'hidden';
+    getHeroVideos().forEach(v => v.pause());
   }
 
   function closeMenu() {
@@ -34,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.setAttribute('aria-hidden', 'true');
     btn.setAttribute('aria-expanded', 'false');
     document.documentElement.style.overflow = '';
+    getHeroVideos().forEach(v => v.play());
   }
 
   overlay.querySelectorAll('.mobile-menu__nav a').forEach(link => {
