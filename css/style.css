@@ -1063,6 +1063,12 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .page-loader__frame {
+    width: 120px;
+    right: 12px;
+    bottom: 12px;
+  }
+
   .project-hero__content {
     grid-template-columns: 1fr;
     padding: 2rem 1.5rem 3rem;
