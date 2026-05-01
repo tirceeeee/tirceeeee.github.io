@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre Beatriz Montes Gijon, disenadora grafica e ilustradora">
+    <title>About | Beatriz Montes Gijon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/vsu6xsa.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 1.25rem 3rem;
+            background-color: transparent;
+        }
+
+        .about-page {
+            position: relative;
+            min-height: 100svh;
+            overflow-x: clip;
+            background: var(--color-bg);
+        }
+
+        .about-page h1,
+        .about-page h2,
+        .about-page p,
+        .about-page li,
+        .about-page span {
+            color: var(--color-blue);
+            mix-blend-mode: normal;
+        }
+
+        .about-hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100svh;
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+            align-items: end;
+            gap: 4rem;
+            padding: 8rem 3rem 4rem;
+        }
+
+        .about-heading {
+            position: relative;
+            z-index: 1;
+            font-family: var(--font-heading);
+            font-size: clamp(4rem, 13vw, 180px);
+            font-weight: 700;
+            line-height: 0.82;
+            letter-spacing: 0;
+            text-transform: lowercase;
+            margin: 0;
+        }
+
+        .about-intro {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 540px;
+            padding-bottom: 0.75rem;
+        }
+
+        .about-intro p {
+            font-family: var(--font-body);
+            font-size: clamp(18px, 1.8vw, 28px);
+            line-height: 1.25;
+        }
+
+        .about-photo {
+            position: relative;
+            width: min(100%, 520px);
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            cursor: pointer;
+            outline: none;
+            margin: 0 auto;
+            border-radius: 18px;
+        }
+
+        .about-photo__portrait {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            filter: blur(10px);
+            transform: scale(1.04);
+            transition: filter 0.45s ease, transform 0.45s ease;
+        }
+
+        .about-photo:hover .about-photo__portrait,
+        .about-photo:focus .about-photo__portrait {
+            filter: blur(0);
+            transform: scale(1);
+        }
+
+        .about-photo__overlay {
+            position: absolute;
+            right: -12%;
+            bottom: 3%;
+            z-index: 2;
+            width: 112%;
+            height: auto;
+            pointer-events: none;
+        }
+
+        .about-arrow {
+            width: 48px;
+            height: 48px;
+            background: var(--color-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-arrow img {
+            width: 24px;
+            height: 24px;
+            transform: rotate(90deg);
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+            gap: 6rem;
+            padding: 2rem 3rem 8rem;
+        }
+
+        .about-label-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .about-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .about-block {
+            display: grid;
+            grid-template-columns: minmax(160px, 0.38fr) minmax(0, 1fr);
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-block h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 72px);
+            font-weight: 600;
+            line-height: 0.9;
+            letter-spacing: 0;
+            text-transform: lowercase;
+            margin: 0;
+        }
+
+        .about-block p,
+        .about-list li {
+            font-family: var(--font-body);
+            font-size: clamp(16px, 1.2vw, 20px);
+            line-height: 1.5;
+        }
+
+        .about-list {
+            display: grid;
+            gap: 0.55rem;
+            list-style: none;
+        }
+
+        .about-visual {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.56fr);
+            gap: 3rem;
+            align-items: end;
+            padding: 0 3rem 8rem;
+        }
+
+        .about-visual__text {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 8vw, 116px);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: 0;
+            text-transform: lowercase;
+        }
+
+        .about-visual__image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            mix-blend-mode: difference;
+        }
+
+        @media (max-width: 768px) {
+            .about-nav {
+                padding: 1rem 1.25rem;
+            }
+
+            .about-hero,
+            .about-content,
+            .about-visual {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .about-hero {
+                padding-top: 7rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .about-photo {
+                width: min(100%, 420px);
+            }
+
+            .about-block {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="about-nav">
+        <nav class="nav">
+            <a href="index.html" class="logo">Beatriz Montes Gijon</a>
+            <div class="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li><a href="about.html" class="nav-active">About</a></li>
+                    <li><a href="proyectos.html">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <section class="about-hero">
+            <h1 class="about-heading">beatriz<br>montes</h1>
+            <div class="about-intro">
+                <p>Disenadora grafica e ilustradora. Trabajo con identidades, editorial, motion y sistemas visuales para marcas y proyectos que quieren moverse con personalidad.</p>
+                <a href="#bio" class="about-arrow" aria-label="Bajar a la biografia">
+                    <img src="img/arrow.svg" alt="">
+                </a>
+            </div>
+        </section>
+
+        <section id="bio" class="about-content">
+            <div class="about-label-column">
+                <figure class="about-photo" tabindex="0">
+                    <img class="about-photo__portrait" src="img/aboutfoto.jpeg" alt="Retrato de Beatriz Montes Gijon">
+                    <img class="about-photo__overlay" src="img/ilu02.png" alt="">
+                </figure>
+            </div>
+            <div class="about-copy">
+                <div class="about-block">
+                    <h2>quien soy</h2>
+                    <p>Soy Beatriz Montes Gijon, una creative partner para companias, marcas y proyectos culturales que deciden avanzar. Mi trabajo cruza estrategia visual, composicion, tipografia e ilustracion para construir piezas con caracter.</p>
+                </div>
+
+                <div class="about-block">
+                    <h2>que hago</h2>
+                    <ul class="about-list">
+                        <li>Identidad visual</li>
+                        <li>Diseno editorial</li>
+                        <li>Motion graphics</li>
+                        <li>Ilustracion</li>
+                        <li>Direccion visual para marcas y proyectos culturales</li>
+                    </ul>
+                </div>
+
+                <div class="about-block">
+                    <h2>como trabajo</h2>
+                    <p>Me interesa crear sistemas que puedan crecer: piezas con una idea clara, una voz reconocible y suficientes reglas para mantenerse vivas en distintos formatos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-visual">
+            <p class="about-visual__text">visual systems with a point of view</p>
+            <div class="about-visual__image" aria-hidden="true">
+                <img src="img/ilustracion-cta.png" alt="">
+            </div>
+        </section>
+    </main>
+
+        <section id="contact" class="cta-final project-contact">
+            <div class="cta-grid">
+                <div class="cta-col-left">
+                    <div class="cta-block">
+                        <h2 class="cta-title">Si Quieres Ver Más</h2>
+                        <a href="proyectos.html" class="btn-primary">Ver todos los proyectos</a>
+                    </div>
+                    <div class="cta-block">
+                        <h2 class="cta-title">Si Quieres Saber Más</h2>
+                        <a href="about.html" class="btn-primary">Ver más sobre mí</a>
+                    </div>
+                </div>
+                <div class="cta-col-right">
+                    <div class="cta-illustration">
+                        <img src="img/ilustracion-cta.png" alt="Ilustración">
+                    </div>
+                    <div class="cta-block cta-block-right">
+                        <h2 class="cta-title">Si Quieres Hablar Conmigo</h2>
+                        <a href="formulario.html" class="btn-primary">Descubramos como puedo ayudarte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/beatriz-montes-gij�n-4322381a1">LinkedIn</a>
+                <a href="https://www.instagram.com/trizzz.graphix?igsh=MWsyeTc2bjQybnh5cA==">Instagram</a>
+                <a href="https://www.behance.net/beatrizmontes5">Behance</a>
+            </div>
+            <div class="footer-contact">
+                <p>+34 625 22 66 11</p>
+                <a href="mailto:tirce1120@gmail.com">tirce1120@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReducedMotion) return;
+
+            gsap.from('.nav', { y: -20, opacity: 0, duration: 0.8, ease: 'power2.out' });
+
+            const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            heroTl
+                .from('.about-heading', { y: 90, opacity: 0, duration: 1 })
+                .from('.about-intro', { y: 56, opacity: 0, duration: 0.85 }, '-=0.58')
+                .from('.about-arrow', { scale: 0, rotate: -90, opacity: 0, duration: 0.55, ease: 'back.out(1.8)' }, '-=0.28');
+
+            gsap.from('.about-photo', {
+                y: 120,
+                scale: 0.86,
+                rotate: -3,
+                opacity: 0,
+                clipPath: 'inset(18% 0 18% 0 round 18px)',
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.about-content',
+                    start: 'top 92%',
+                    end: 'top 42%',
+                    scrub: 1.2
+                }
+            });
+
+            gsap.to('.about-heading', {
+                yPercent: -14,
+                scale: 0.96,
+                scrollTrigger: {
+                    trigger: '.about-hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1
+                }
+            });
+
+            gsap.to('.about-intro', {
+                y: -90,
+                scrollTrigger: {
+                    trigger: '.about-hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1.2
+                }
+            });
+
+            document.querySelectorAll('.about-block').forEach((block) => {
+                const heading = block.querySelector('h2');
+                const copyItems = block.querySelectorAll('p, li');
+
+                const blockTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: block,
+                        start: 'top 78%',
+                        end: 'bottom 48%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+
+                blockTl
+                    .from(heading, {
+                        x: -90,
+                        rotate: -2,
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: 'power3.out'
+                    })
+                    .from(copyItems, {
+                        x: 70,
+                        y: 24,
+                        opacity: 0,
+                        stagger: 0.08,
+                        duration: 0.72,
+                        ease: 'power2.out'
+                    }, '-=0.48');
+            });
+
+            gsap.from('.about-visual__text', {
+                xPercent: -10,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: { trigger: '.about-visual', start: 'top 76%' }
+            });
+
+            gsap.from('.about-visual__image', {
+                x: 80,
+                rotate: 4,
+                scale: 0.9,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: { trigger: '.about-visual', start: 'top 76%' }
+            });
+
+            gsap.to('.about-visual__text', {
+                xPercent: 6,
+                scrollTrigger: {
+                    trigger: '.about-visual',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 1
+                }
+            });
+
+            gsap.to('.about-visual__image', {
+                y: -90,
+                rotate: -3,
+                scrollTrigger: {
+                    trigger: '.about-visual',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 1.2
+                }
+            });
+
+        });
+    </script>
+    <script src="js/cursor.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/page-loader.js"></script>
+    <script src="js/text-scramble.js"></script>
+</body>
+</html>

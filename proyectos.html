@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos de Beatriz Montes Gijón, diseñadora gráfica e ilustradora">
+    <title>Works | Beatriz Montes Gijón</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/vsu6xsa.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .nav-bar { background-color: transparent; border-bottom: none; }
+    </style>
+</head>
+<body>
+
+    <header class="nav-bar">
+        <nav class="nav">
+            <a href="index.html" class="logo">Beatriz Montes Gijón</a>
+            <div class="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="proyectos.html" class="nav-active">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="works-page">
+
+        <div class="works-inner">
+
+            <!-- Header: title + filter -->
+            <div class="works-header">
+                <h1 class="works-heading">Proyectos</h1>
+                <nav class="works-filter" aria-label="Filtrar por categoría">
+                    <button class="works-filter__btn works-filter__btn--active" data-filter="all">All</button>
+                    <button class="works-filter__btn" data-filter="editorial">Editorial</button>
+                    <button class="works-filter__btn" data-filter="motion">Motion graphics</button>
+                    <button class="works-filter__btn" data-filter="illustrations">Illustrations</button>
+                    <button class="works-filter__btn" data-filter="identidad">Visual identity</button>
+                </nav>
+            </div>
+
+            <!-- Projects grid — left col: odd items, right col: even items (offset) -->
+            <div class="works-grid">
+
+                <!-- 1 — left -->
+                <article class="work-card" data-category="editorial">
+                    <a href="eterno-retorno.html" class="work-card__link">
+                        <div class="work-card__img work-card__img--3-4">
+                            <img src="img/works/eterno-retorno.png" alt="Eterno retorno" loading="lazy">
+                            <div class="work-card__hover" aria-hidden="true"></div>
+                            <span class="work-card__more">Ver más</span>
+                        </div>
+                        <div class="work-card__info">
+                            <h2 class="work-card__title">Eterno retorno</h2>
+                            <span class="work-card__category">Editorial</span>
+                        </div>
+                    </a>
+                </article>
+
+    
+            
+                <article class="work-card" data-category="illustrations">
+                    <a href="nudo.html" class="work-card__link">
+                        <div class="work-card__img work-card__img--3-5">
+                            <img src="img/works/nudo.png" alt="Nudo" loading="lazy">
+                            <div class="work-card__hover" aria-hidden="true"></div>
+                            <span class="work-card__more">Ver más</span>
+                        </div>
+                        <div class="work-card__info">
+                            <h2 class="work-card__title">Nudo</h2>
+                            <span class="work-card__category">Editorial</span>
+                        </div>
+                    </a>
+                </article>
+
+           
+
+                <!-- 5 — left -->
+                <article class="work-card" data-category="identidad">
+                    <a href="teatros.html" class="work-card__link">
+                        <div class="work-card__img work-card__img--4-3">
+                            <img src="img/works/teatros.jpg" alt="Otras montes" loading="lazy">
+                            <div class="work-card__hover" aria-hidden="true"></div>
+                            <span class="work-card__more">Ver más</span>
+                        </div>
+                        <div class="work-card__info">
+                            <h2 class="work-card__title">Teatros del canal</h2>
+                            <span class="work-card__category">Visual identity</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 6 — right -->
+                <article class="work-card" data-category="motion">
+                    <a href="memories.html" class="work-card__link">
+                        <div class="work-card__img work-card__img--3-4">
+                            <img src="img/works/memories.png" alt="Seminos" loading="lazy">
+                            <div class="work-card__hover" aria-hidden="true"></div>
+                            <span class="work-card__more">Ver más</span>
+                        </div>
+                        <div class="work-card__info">
+                            <h2 class="work-card__title">Memories</h2>
+                            <span class="work-card__category">Motion graphics</span>
+                        </div>
+                    </a>
+                </article>
+
+            </div><!-- /works-grid -->
+        </div><!-- /works-inner -->
+    </main>
+
+        <section id="contact" class="cta-final project-contact">
+            <div class="cta-grid">
+                <div class="cta-col-left">
+                    <div class="cta-block">
+                        <h2 class="cta-title">Si Quieres Ver Más</h2>
+                        <a href="proyectos.html" class="btn-primary">Ver todos los proyectos</a>
+                    </div>
+                    <div class="cta-block">
+                        <h2 class="cta-title">Si Quieres Saber Más</h2>
+                        <a href="about.html" class="btn-primary">Ver más sobre mí</a>
+                    </div>
+                </div>
+                <div class="cta-col-right">
+                    <div class="cta-illustration">
+                        <img src="img/ilustracion-cta.png" alt="Ilustración">
+                    </div>
+                    <div class="cta-block cta-block-right">
+                        <h2 class="cta-title">Si Quieres Hablar Conmigo</h2>
+                        <a href="formulario.html" class="btn-primary">Descubramos como puedo ayudarte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/beatriz-montes-gij�n-4322381a1">LinkedIn</a>
+                <a href="https://www.instagram.com/trizzz.graphix?igsh=MWsyeTc2bjQybnh5cA==">Instagram</a>
+                <a href="https://www.behance.net/beatrizmontes5">Behance</a>
+            </div>
+            <div class="footer-contact">
+                <p>+34 625 22 66 11</p>
+                <a href="mailto:tirce1120@gmail.com">tirce1120@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/page-loader.js"></script>
+    <script src="js/text-scramble.js"></script>
+    <script src="js/works.js"></script>
+</body>
+</html>
+

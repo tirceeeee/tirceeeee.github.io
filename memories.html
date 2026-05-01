@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Memories — Post-producción — Beatriz Montes Gijón">
+    <title>Memories — Post-producción | Beatriz Montes Gijón</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/vsu6xsa.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        
+        .tc-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 50;
+            padding: 1.25rem 3rem;
+            background-color: transparent;
+        }
+
+       
+        .mem-page {
+            display: flex;
+            align-items: flex-start;
+            overflow-x: clip;
+            background: var(--color-bg);
+        }
+
+       
+        .mem-left {
+            flex: 0 0 55%;
+            min-width: 0;
+        }
+
+        
+        .tc-hero {
+            position: relative;
+            width: 100%;
+            height: 200svh;
+        }
+        .tc-hero__sticky {
+            position: sticky;
+            top: 0;
+            height: 100svh;
+            overflow: visible; 
+            background: #e8e8e8;
+        }
+        .tc-hero__bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100%;
+        }
+        .tc-hero__bg img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .tc-hero__text {
+            position: absolute;
+            top: clamp(80px, 14%, 260px);
+            left: clamp(24px, 3.2%, 49px);
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 4rem;
+            z-index: 1;
+        }
+        .tc-col-left__meta { display: flex; flex-direction: column; gap: 0.25rem; }
+        .tc-category {
+            font-family: var(--font-body);
+            font-size: clamp(14px, 1.3vw, 20px);
+            color: var(--color-yellow) !important;
+            mix-blend-mode: difference !important;
+        }
+        .tc-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4.2vw, 64px);
+            font-weight: 600;
+            line-height: 1.05;
+            color: var(--color-yellow) ;
+            mix-blend-mode: difference ;
+            text-transform: capitalize;
+            margin: 0;
+        }
+        .tc-arrow {
+            position: absolute;
+            right: 4%; top: 49%;
+            width: 48px; height: 48px;
+            background: var(--color-blue);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2;
+            color: var(--color-yellow);
+            mix-blend-mode: normal;
+        }
+        .tc-arrow img { width: 24px; height: 24px; transform: rotate(90deg); }
+
+        
+        .mem-videos {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            padding: 5rem clamp(24px, 3.2%, 49px);
+        }
+        .mem-video-item {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            position: relative;
+            background: var(--color-bg);
+        }
+        .mem-video-item video {
+            position: absolute;
+            width: 100%; height: 110%;
+            top: -5%;
+            object-fit: cover;
+            display: block;
+        }
+
+        
+        .mem-sidebar {
+            flex: 1;
+            position: sticky;
+            top: 0;
+            padding-top: clamp(80px, 14%, 200px);
+            padding-right: clamp(24px, 3.2%, 49px);
+            padding-bottom: 8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .mem-sidebar .tc-rol-label {
+            font-family: var(--font-body);
+            font-size: clamp(14px, 1.3vw, 20px);
+            color: var(--color-blue) !important;
+            mix-blend-mode: difference !important;
+            display: block;
+        }
+        .mem-sidebar .tc-claim {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 6.3vw, 96px);
+            font-weight: 600;
+            line-height: 0.93;
+            letter-spacing: -0.02em;
+            color: var(--color-blue) ;
+            mix-blend-mode: difference;
+            text-transform: capitalize;
+            margin: 0;
+        }
+        .mem-sidebar .tc-description {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .mem-sidebar .tc-description p {
+            font-family: var(--font-body);
+            font-size: clamp(13px, 1.05vw, 16px);
+            line-height: 1.65;
+            color: var(--color-blue) ;
+            mix-blend-mode: difference ;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    
+    <header class="tc-nav">
+        <nav class="nav">
+            <a href="index.html" class="logo">Beatriz Montes Gijón</a>
+            <div class="nav-links-wrapper">
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="proyectos.html" class="nav-active">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+    <div class="mem-page">
+
+       
+        <div class="mem-left">
+
+            <section class="tc-hero">
+                <div class="tc-hero__sticky">
+                    <div class="tc-hero__bg">
+                        <img src="img/memories.png" alt="Memories">
+                    </div>
+                    <div class="tc-hero__text">
+                        <div class="tc-col-left__meta">
+                            <span class="tc-category">Post-producción</span>
+                            <h1 class="tc-title">Memories</h1>
+                        </div>
+                        <a href="mailto:tirce1120@gmail.com" class="btn-primary">Hablemos!</a>
+                    </div>
+                    <a href="#project-details" class="tc-arrow" aria-label="Ir al contenido del proyecto">
+                        <img src="img/arrow.svg" alt="Scroll down">
+                    </a>
+                </div>
+            </section>
+
+            <div id="project-details" class="mem-videos">
+
+                <div class="mem-video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="vid/roto01.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="mem-video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="vid/roto02.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="mem-video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="vid/roto 03.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <aside class="mem-sidebar">
+            <div>
+                <span class="tc-rol-label">Rol</span>
+                <h2 class="tc-claim">Diseñadora<br>Audiovisuales</h2>
+            </div>
+            <div class="tc-description">
+                <p>Exploración visual sobre la persistencia y transformación de la memoria a través del motion graphics. Un proyecto que indaga en cómo los recuerdos se moldean, se distorsionan y perduran en el tiempo.</p>
+                <p>A través del movimiento y la imagen, se construye un lenguaje visual que refleja la naturaleza fragmentada y subjetiva de la memoria humana.</p>
+            </div>
+        </aside>
+
+    </div>
+
+        <section id="contact" class="cta-final project-contact">
+            <div class="cta-grid">
+                <div class="cta-col-left">
+                    <div class="cta-block">
+                        <h2 class="cta-title">Si Quieres Ver Más</h2>
+                        <a href="proyectos.html" class="btn-primary">Ver todos los proyectos</a>
+                    </div>
+                    <div class="cta-block">
+                        <h2 class="cta-title">Si Quieres Saber Más</h2>
+                        <a href="about.html" class="btn-primary">Ver más sobre mí</a>
+                    </div>
+                </div>
+                <div class="cta-col-right">
+                    <div class="cta-illustration">
+                        <img src="img/ilustracion-cta.png" alt="Ilustración">
+                    </div>
+                    <div class="cta-block cta-block-right">
+                        <h2 class="cta-title">Si Quieres Hablar Conmigo</h2>
+                        <a href="formulario.html" class="btn-primary">Descubramos como puedo ayudarte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/beatriz-montes-gijón-4322381a1">LinkedIn</a>
+                <a href="https://www.instagram.com/trizzz.graphix?igsh=MWsyeTc2bjQybnh5cA==">Instagram</a>
+                <a href="https://www.behance.net/beatrizmontes5">Behance</a>
+            </div>
+            <div class="footer-contact">
+                <p>+34 625 22 66 11</p>
+                <a href="mailto:tirce1120@gmail.com">tirce1120@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            /* Nav */
+            gsap.from('.nav', { y: -20, opacity: 0, duration: 0.8, ease: 'power2.out' });
+
+            /* Hero reveal */
+            gsap.from(['.tc-col-left__meta', '.tc-hero .btn-primary'], {
+                y: 40, opacity: 0, stagger: 0.15, duration: 0.9, ease: 'power2.out', delay: 0.2
+            });
+            gsap.from('.mem-sidebar', {
+                y: 40, opacity: 0, duration: 0.9, ease: 'power2.out', delay: 0.35
+            });
+
+         
+            document.querySelectorAll('.mem-video-item').forEach((item) => {
+                gsap.from(item, {
+                    y: 80, opacity: 0, duration: 1, ease: 'power2.out',
+                    scrollTrigger: { trigger: item, start: 'top 85%', once: true }
+                });
+                const vid = item.querySelector('video');
+                if (vid) {
+                    gsap.to(vid, {
+                        y: '-10%', ease: 'none',
+                        scrollTrigger: { trigger: item, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
+                    });
+                }
+            });
+
+        });
+    </script>
+
+    <script src="js/cursor.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/page-loader.js"></script>
+    <script src="js/text-scramble.js"></script>
+</body>
+</html>
+
+
+
