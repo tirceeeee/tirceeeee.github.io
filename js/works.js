@@ -1,4 +1,4 @@
-// Filter functionality for works page
+
 document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('.works-filter__btn');
   const workCards = document.querySelectorAll('.work-card');
@@ -29,11 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       const filterValue = button.getAttribute('data-filter');
 
-      // Update active button
+
       filterButtons.forEach(btn => btn.classList.remove('works-filter__btn--active'));
       button.classList.add('works-filter__btn--active');
 
-      // Filter cards
       workCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
 
