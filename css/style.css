@@ -1546,4 +1546,8 @@ ul {
   .form-field select {
     border-radius: 0 !important;
   }
+
+  .tc-hero .btn-primary {
+    display: none;
+  }
 }
