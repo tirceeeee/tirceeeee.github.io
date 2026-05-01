@@ -1120,7 +1120,8 @@ ul {
     height: 100vh;
   }
   .nav .logo {
-    font-size: 14px;
+    font-size: 18px;
+    margin-left: 0.25rem;
   }
   .nav .nav-links-wrapper {
     padding: 0.4rem 1rem;
